@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+body {
+    font-family: 'Work Sans', sans-serif;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        margin-bottom: 0;
+    }
+
+    img {
+        user-select: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+        outline: none !important;
+
+        &:hover {
+            text-decoration: none !important;
+            color: #666;
+        }
+    }
+
+    ul,
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0 !important;
+    }
+
+    .card {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+
+        .card-body {
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+        }
+    }
+
+    .myBtn {
+        cursor: pointer;
+
+        a {
+            padding: 20px 39px 20px 35px;
+            background: #FFFFFF;
+            box-shadow: 0px 10px 30px rgba(58, 55, 196, 0.5);
+            border-radius: 10px;
+            font-size: 16px;
+            line-height: 22px;
+            color: #5855EE;
+            font-family: 'Manrope Bold';
+
+            i {
+                color: #5855EE;
+                font-size: 15px;
+                padding-left: 10px;
+            }
+        }
+
+    }
+}
