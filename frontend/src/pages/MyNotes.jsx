@@ -19,6 +19,7 @@ const MyNotes = () => {
           {notes.map((note, index) => (
             <div key={note._id} className="col-lg-10 mx-auto mb-5">
               <div className="card">
+                  
                 <div className="card-header d-flex align-items-center">
                   <h6>{note.title}</h6>
                   <Link to={`/note/${note._id}`} className="btn ml-auto btn-primary">Edit note</Link>
