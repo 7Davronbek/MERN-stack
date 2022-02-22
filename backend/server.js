@@ -3,7 +3,9 @@ const notes = require("./data/notes")
 const dotenv = require("dotenv")
 
 const app = express()
+
 dotenv.config()
+
 
 app.get("/", (req, res) => {
     res.send("API  is running....")
