@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { LOGIN } from '../redux/types/authTypes'
 import { API_PATH } from '../tools/constants'
 
 const Login = () => {
@@ -12,6 +13,7 @@ const Login = () => {
         axios.post(API_PATH + '/login', { email, password })
             .then((res) => {
                 console.log(res);
+                localStorage.setItem(LOGIN, res.data.token)
             })
             .catch((err) => {
                 console.log(err);
@@ -24,7 +26,8 @@ const Login = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <form onSubmit={login}>
+                            <h1 className="text-center mt-5">Login</h1>
+                            <form onSubmit={login} className='w-50 rounded px-3 py-5 mx-auto my-5 border'>
                                 <input
                                     type="email"
                                     name="email"
@@ -35,7 +38,7 @@ const Login = () => {
                                     onChange={e => setEmail(e.target.value)}
                                 />
                                 <input
-                                    type="text"
+                                    type="password"
                                     name="password"
                                     placeholder='Password*'
                                     required
