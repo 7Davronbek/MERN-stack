@@ -1,33 +1,30 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import { API_PATH } from '../tools/constants'
 
-const Verify = () => {
+const Login = () => {
     const [email, setEmail] = useState('')
-    const [code, setCode] = useState('')
+    const [password, setPassword] = useState('')
 
-    const history = useHistory()
-
-    const verify = e => {
+    const login = e => {
         e.preventDefault()
-        axios.post(API_PATH + '/verify', { code, email })
+
+        axios.post(API_PATH + '/login', { email, password })
             .then((res) => {
                 console.log(res);
-                history.push("/login")
             })
             .catch((err) => {
                 console.log(err);
             })
     }
+
     return (
         <>
-            <div className="verify">
+            <div className="login">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <h1 className="text-center mt-5">Verify your email</h1>
-                            <form onSubmit={verify} className='w-50 rounded px-3 py-5 mx-auto my-5 border'>
+                            <form onSubmit={login}>
                                 <input
                                     type="email"
                                     name="email"
@@ -39,14 +36,14 @@ const Verify = () => {
                                 />
                                 <input
                                     type="text"
-                                    name="code"
-                                    placeholder='Code*'
+                                    name="password"
+                                    placeholder='Password*'
                                     required
                                     className='form-control mb-4'
-                                    value={code}
-                                    onChange={e => setCode(e.target.value)}
+                                    value={password}
+                                    onChange={e => setPassword(e.target.value)}
                                 />
-                                <button type='submit' className='btn btn-outline-dark d-block ml-auto mt-5'>Verify</button>
+                                <button type='submit' className='btn btn-outline-primary d-block ml-auto mt-5'>Login</button>
                             </form>
                         </div>
                     </div>
@@ -56,4 +53,4 @@ const Verify = () => {
     )
 }
 
-export default Verify
+export default Login

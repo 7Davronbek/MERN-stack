@@ -37,6 +37,7 @@ const Register = (props) => {
 
           <div className="row">
             <div className="col-12">
+              <h1 className="text-center mt-5">Register</h1>
               <form onSubmit={registerUser} className='w-50 rounded px-3 py-5 mx-auto my-5 border'>
                 <input
                   type="text"
