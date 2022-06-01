@@ -1,22 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './sass/main.scss'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./sass/main.scss";
+import { applyMiddleware, compose, createStore } from "redux";
+import { rootReducer } from "./redux/reducers/rootReducer";
+import thunk from "redux-thunk";
+import { Provider } from "react-redux";
 
-import Navbar from './components/Navbar';
+const store = createStore(
+  rootReducer,
+  compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+);
 
 ReactDOM.render(
-  <BrowserRouter>
-  <Navbar />
-    <Switch>
-      <Route path='/' exact component={App} />
-    </Switch>
-  </BrowserRouter>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
 );
 
 reportWebVitals();
