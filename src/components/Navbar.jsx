@@ -13,7 +13,6 @@ const Navbar = () => {
                     <div className="col-6 ml-auto">
                         <ul className='d-flex align-items-center justify-content-end'>
                             <li className='mr-5'><Link to='/'>Home</Link></li>
-                            <li><Link to='/my-notes'>MyNotes</Link></li>
                         </ul>
                     </div>
                 </div>
