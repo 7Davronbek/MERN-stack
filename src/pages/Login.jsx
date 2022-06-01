@@ -1,11 +1,14 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { LOGIN } from '../redux/types/authTypes'
 import { API_PATH } from '../tools/constants'
 
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    const history = useHistory()
 
     const login = e => {
         e.preventDefault()
@@ -14,6 +17,7 @@ const Login = () => {
             .then((res) => {
                 console.log(res);
                 localStorage.setItem(LOGIN, res.data.token)
+                history.push("/")
             })
             .catch((err) => {
                 console.log(err);
