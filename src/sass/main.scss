@@ -3,6 +3,11 @@
 body {
     font-family: 'Work Sans', sans-serif;
 
+    ::selection {
+        background: #7797ff;
+        color: #fff;
+    }
+
     h1,
     h2,
     h3,

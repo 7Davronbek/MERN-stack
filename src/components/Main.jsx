@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Header from './Header'
 
 const Main = () => {
@@ -14,7 +15,7 @@ const Main = () => {
                         <div className="col-6 mx-auto text-center">
                             <h1 className="mb-5 pb-5">MERN NOTES APP</h1>
                             <button className="btn btn-dark ">Log in</button>
-                            <button className="btn btn-outline-dark mx-3">Sign up</button>
+                            <Link to='/register' className="btn btn-outline-dark mx-3">Register</Link>
                         </div>
                     </div>
                 </div>
