@@ -1,10 +1,11 @@
 import React from "react";
+import Header from "./components/Header";
 
 const App = () => {
   return (
     <>
       <div
-        style={{ height: "75vh" }}
+        style={{ height: "35vh" }}
         className="app d-flex align-items-center justify-content-center "
       >
         <div className="container">
@@ -17,6 +18,8 @@ const App = () => {
           </div>
         </div>
       </div>
+
+      <Header />
     </>
   );
 };
