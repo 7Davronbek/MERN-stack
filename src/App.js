@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import Main from "./components/Main";
 import Navbar from "./components/Navbar";
 import Register from "./pages/Register";
+import Verify from "./pages/Verify";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/register" exact component={Register} />
+          <Route path="/verify" exact component={Verify} />
         </Switch>
       </BrowserRouter>
     </>
